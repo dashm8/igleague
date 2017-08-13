@@ -1,0 +1,51 @@
+@model IsrealLeague.Models.Account
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Account</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <label asp-for="username" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="username" class="form-control" />
+                <span asp-validation-for="username" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="password" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="score" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="score" class="form-control" />
+                <span asp-validation-for="score" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
